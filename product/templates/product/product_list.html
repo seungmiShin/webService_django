@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}product_list.html{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+.product_list {
+    padding: 20px;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+  <h1>모든 제품</h1>
+  <br>
+
+  <ul>
+    {% for product in object_list %}
+      <li class="product_list">
+        <a href="{% url 'product_detail' product.id %}">
+          <img width="100px" height="100px" src="{{ product.getImagePath }}">
+          {{ product.name }}
+        </a>
+      </li>
+
+    {% endfor %}
+  </ul>
+{% endblock %}

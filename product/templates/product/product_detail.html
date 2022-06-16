@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}product_detail.html{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+.product_detail {
+    padding: 20px;
+}
+
+</style>
+{% endblock %}
+
+{%block content %}
+  <h1>{{ object.name }}</h1>
+
+  <img width="30%" height="30%" src="{{ product.getImagePath }}">
+
+  <ul class="product_detail">
+    <li>제품명: {{ object.name }}</li>
+    <li>가격: {{ object.price }}</li>
+    <li>발매일: {{ object.release_date }}</li>
+  </ul>
+
+{% endblock %}
