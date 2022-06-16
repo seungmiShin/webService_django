@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}coupon_detail.html{% endblock %}
+
+{% block extra-style %}
+<style type="text/css">
+.coupon_detail {
+    padding: 20px;
+}
+
+</style>
+{% endblock %}
+
+{%block content %}
+  <h1>{{ object.name }} {{ object.price }}원</h1>
+
+  <img width="30%" height="30%" src="{{ coupon.getImagePath }}">
+
+  <ul class="coupon_detail">
+    <li>제품명: {{ object.name }}</li>
+    <li>가격: {{ object.price }}</li>
+  </ul>
+
+{% endblock %}
